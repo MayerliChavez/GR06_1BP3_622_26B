@@ -39,5 +39,4 @@ public class CalculatorParametersTest {
         int actual = c.addition(a, b);
         assertEquals(expected, actual);
     }
-
 }

@@ -7,6 +7,11 @@ public class CalculatorTest {
     
   Calculator c = null;
 
+    @BeforeClass
+    public static void setUpClass(){
+        System.out.println("setUpClass()");
+    }
+
     @Before
     public void setUp() {
         c = new Calculator();
@@ -23,5 +28,24 @@ public class CalculatorTest {
     public void given_two_integers_when_subtraction_then_ok() {
         assertEquals(2, c.subtraction(4, 2));
         System.out.println("Test 2");
+    }
+
+    @Test(expected=ArithmeticException.class)
+    public void given_two_integers_when_division_then_ok(){
+        assertEquals(3,c.division(6,0));
+        System.out.println("Test 3");
+    }
+
+
+    @After
+    public void tearDown(){
+        System.out.println("tearDown()");
+        c.setAnswer(0);
+        c = null;
+    }
+
+    @AfterClass
+    public static void tearDownClass(){
+        System.out.println("tearDownClass()");
     }
 }
