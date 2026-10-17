@@ -36,6 +36,11 @@ public class CalculatorTest {
         System.out.println("Test 3");
     }
 
+    @Test (timeout = 150)
+    public void given_two_integers_when_multiplication_then_timeout(){
+        System.out.println("Test 4");
+        assertEquals(8, c.multiplication(4, 2));
+    }
 
     @After
     public void tearDown(){
